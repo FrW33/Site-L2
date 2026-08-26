@@ -750,8 +750,15 @@
                         msgBox.className = "text-center text-sm font-bold mt-2 text-red-500";
                         msgBox.classList.remove('hidden');
                     }
-                } catch (error) {
-                    msgBox.innerHTML = "Erro ao conectar com o banco de dados.";
-                    msgBox.className = "text-center text-sm font-bold mt-2 text-red-500";
-                    msgBox.classList.remove('hidden');
-                }
+                            } catch (error) {
+                msgBox.innerHTML = "Erro ao conectar com o banco de dados.";
+                msgBox.className = "text-center text-sm font-bold mt-2 text-red-500";
+                msgBox.classList.remove('hidden');
+            }
+            btnSubmit.innerHTML = originalText;
+            btnSubmit.disabled = false;
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
