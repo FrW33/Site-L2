@@ -1,12 +1,122 @@
+Ir para o conteúdo
+FrW33
+Site-L2
+Navegação do repositório
+Código
+Problemas
+Solicitações de pull
+Ações
+Projetos
+Wiki
+Segurança e qualidade
+Percepções
+Configurações
+Arquivos
+Acesse o arquivo
+t
+T
+baixar.html
+baixar_en.html
+baixar_pt.html
+index.html
+index_en.html
+index_pt.html
+informacion.html
+informacion_pt.html
+informação_en.html
+script.js
+status.php
+estilo.css
+Site-L2
+/
+index.html
+em
+principal
+
+Editar
+
+Pré-visualização
+Modo de recuo
+
+Espaços
+Tamanho do recuo
+
+4
+modo de quebra de linha
+
+Sem embrulho
+Editando o conteúdo do arquivo index.html
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lineage 2 La2-Nox - Hi5</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Marcellus&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <title>Lineage 2 L2Antharas - Hi5 200x</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://tailwindcss.com"></script>
+    <link href="https://googleapis.com" rel="stylesheet">
     <style>
         /* Estilos 3D personalizados estilo Lineage 2 UI */
         .l2-3d-button {
@@ -46,8 +156,6 @@
             box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.9),
                         0 2px 4px rgba(0, 0, 0, 0.6);
         }
-
-        /* Botones del Navbar superior con efecto 3D sutil en recuadro */
         .nav-3d-btn {
             background: linear-gradient(to bottom, rgba(30, 27, 22, 0.85), rgba(10, 9, 8, 0.95));
             border: 1px solid rgba(200, 155, 60, 0.35);
@@ -62,410 +170,5 @@
             border-color: rgba(241, 196, 93, 0.9);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 4px 10px rgba(0,0,0,0.8), 0 0 12px rgba(200, 155, 60, 0.4);
             color: #f3e5ab;
-            transform: translateY(-1px);
-        }
-    </style>
-</head>
-<body class="pt-16 px-4 pb-4 flex flex-col items-center min-h-screen">
-
-   <nav class="fixed top-0 left-0 w-full z-50 bg-black/85 backdrop-blur-md border-b border-white/10 shadow-lg md:h-16">
-    <!-- Main container: On PC (md+) everything stays on a single row (h-full and flex-row) -->
-    <div class="max-w-[1500px] w-full h-full mx-auto px-4 py-3 md:py-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 font-sc tracking-[0.1em] text-xs text-white/90">
-
-        <!-- LEFT SIDE: LOGO + MENU -->
-        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-            
-            <!-- Logo -->
-            <a href="index_en.html" class="flex items-center gap-2 no-underline group shrink-0">
-                <div class="h-8 px-2 rounded-lg bg-gradient-to-b from-[#ffe58f] via-[#c89b3c] to-[#755b23] flex flex-col items-center justify-center font-black text-black shadow-[0_0_12px_rgba(200,155,60,0.6)] border border-[#ffe58f]/60 transform -rotate-6 group-hover:scale-105 group-hover:rotate-0 transition-all duration-300 leading-none">
-                    <span class="text-[9px] lowercase opacity-80 tracking-widest -mb-0.5">la2</span>
-                    <span class="text-[13px] uppercase">nox</span>
-                </div>
-                <div class="hidden sm:flex items-center gap-1 font-bold tracking-wider text-sm uppercase">
-                    <span class="text-white group-hover:text-[#f3e5ab] transition-colors">SERVER</span>
-                    <span class="text-[#c89b3c]">HIGH FIVE</span>
-                </div>
-            </a>
-
-            <!-- Navigation Buttons -->
-            <div class="flex items-center gap-2 md:gap-4 uppercase shrink-0">
-                <a href="index_en.html" class="nav-3d-btn">Home</a>
-                <a href="information_en.html" class="nav-3d-btn">Information</a>
-                <a href="download_en.html" class="nav-3d-btn">Download</a>
-
-                <!-- NEW CREATE ACCOUNT BUTTON -->
-                <button id="btn-open-register" class="nav-3d-btn text-[#f3e5ab] font-bold border-[#c89b3c] bg-[#c89b3c]/10 cursor-pointer hover:scale-105 transition-transform">
-                    Create Account
-                </button>
-            </div>
-
-        <!-- RIGHT SIDE: SERVER STATUS & LANGUAGES -->
-        <div class="flex items-center justify-center gap-2 md:gap-3 uppercase shrink-0">
-
-            <div class="flex items-center space-x-2 bg-black/60 px-2 py-1.5 rounded-sm border border-white/10">
-                <span class="text-white/50 hidden xl:inline">Server:</span>
-                <span id="server-dot" class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
-                <span id="server-text" class="text-green-400 font-bold">Online</span>
-            </div>
-
-            <div class="flex items-center space-x-1.5 bg-black/60 px-2 py-1.5 rounded-sm border border-white/10">
-                <span class="text-white/50 hidden xl:inline">Olympiad:</span>
-                <span class="text-white/50 xl:hidden">Oly:</span>
-                <span id="oly-time" class="text-[#c89b3c] font-bold">Loading...</span>
-            </div>
-
-            <div class="flex items-center space-x-1.5 bg-black/60 px-2 py-1.5 rounded-sm border border-white/10">
-                <span class="text-white/50 hidden xl:inline">Seven Signs:</span>
-                <span class="text-white/50 xl:hidden">7S:</span>
-                <span id="ssq-time" class="text-[#c89b3c] font-bold">Loading...</span>
-            </div>
-
-            <!-- Discord Button -->
-            <a href="https://discord.gg/Q9NXk3Z37P" target="_blank" class="nav-3d-btn text-indigo-200 border-indigo-500/40">
-                Discord
-            </a>
-
-            <!-- SELECTOR DE IDIOMA DESPLEGABLE (POR CLIC - VERSIÓN DEFINITIVA) -->
-<div class="relative ml-10">
-    <!-- Botón Principal con el clic integrado directamente aquí -->
-    <button type="button" onclick="document.getElementById('lang-menu').classList.toggle('hidden'); event.stopPropagation();" class="flex items-center gap-1.5 bg-black/60 px-2.5 py-1.5 rounded-sm border border-white/10 text-white/80 hover:text-white hover:border-[#c89b3c]/50 transition-colors cursor-pointer uppercase text-xs font-bold">
-        <!-- Icono de Mundo -->
-        <svg class="w-3.5 h-3.5 text-[#c89b3c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-        EN
-        <!-- Flechita hacia abajo -->
-        <svg class="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-    </button>
-    
-    <!-- Caja del Menú Desplegable -->
-    <div id="lang-menu" class="absolute right-0 top-full mt-1 w-28 bg-[#0a080c]/95 backdrop-blur-md border border-[#c89b3c]/30 rounded-md shadow-[0_5px_15px_rgba(0,0,0,0.8)] hidden z-[100] flex flex-col overflow-hidden">
-        
-        <!-- Opción Español -->
-        <a href="index.html" class="px-4 py-2.5 text-[11px] font-bold text-[#c89b3c] bg-white/5 hover:bg-white/10 transition-colors flex items-center gap-2">
-            <img src="https://flagcdn.com/w20/es.png" alt="ES" class="w-4 h-auto rounded-sm"> Español
-        </a>
-        
-        <!-- Opción Inglés -->
-        <a href="index_en.html" class="px-4 py-2.5 text-[11px] font-bold text-white/70 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2 border-t border-white/5">
-            <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="w-4 h-auto rounded-sm"> English
-        </a>
-        
-        <!-- Opción Portugués -->
-        <a href="index_pt.html" class="px-4 py-2.5 text-[11px] font-bold text-white/70 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2 border-t border-white/5">
-            <img src="https://flagcdn.com/w20/br.png" alt="PT" class="w-4 h-auto rounded-sm"> Português
-        </a>
-
-    </div>
-</div>
-
-<!-- Este mini script es solo para que el menú se cierre si haces clic afuera -->
-<script>
-    window.addEventListener('click', function() {
-        var menu = document.getElementById('lang-menu');
-        if (menu && !menu.classList.contains('hidden')) {
-            menu.classList.add('hidden');
-        }
-    });
-</script>
-</nav>
-
-<div class="bg-epic"></div>
-<div class="ui-overlay"></div>
-
-<div class="main-container">
-
-    <!-- Logo -->
-    <div class="mb-8 relative z-10 logo-container">
-        <h1 class="logo-text">La2-Nox</h1>
-        <p class="logo-subtext">Hi5 Server</p>
-    </div>
-
-    <div class="logo-spacer"></div>
-
-        <div class="relative w-full max-w-[1000px]">
-    <main class="l2-window w-full p-8 md:p-14 mb-14">
-        <div class="window-corner wc-tl"></div><div class="window-corner wc-tr"></div>
-        <div class="window-corner wc-bl"></div><div class="window-corner wc-br"></div>
-
-        <div class="text-center">
-            <h2 class="font-sc text-xl md:text-3xl text-[--l2-gold-light] mb-4 tracking-[0.4em] uppercase opacity-90">
-                Welcome to La2-Nox
-            </h2>
-            <p class="text-white/70 mb-10 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-                Forge your destiny in the ultimate High Five experience. Join an active community, take part in epic castle sieges, and prove your worth on the battlefield. Do you have what it takes to rule Aden?
-            </p>
-
-            <div class="divider"></div>
-
-            <div class="flex flex-wrap justify-center gap-10 md:gap-16 text-sm font-sc tracking-[4px] uppercase mb-4 mt-6">
-                <div class="flex flex-col items-center">
-                    <span class="text-white/40 text-[10px] mb-2">Chronicle</span>
-                    <span class="text-[--l2-gold-light] font-bold text-lg">Hi5</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <span class="text-white/40 text-[10px] mb-2">Rates</span>
-                    <span class="text-[--l2-gold-light] font-bold text-lg">EXP x5</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <span class="text-white/40 text-[10px] mb-2">Platform</span>
-                    <span class="text-[--l2-gold-light] font-bold text-lg">Official L2Journey</span>
-                </div>
-            </div>
-        </div>
-    </main>
-</div>
-
-<!-- MAIN 3D ACTION BUTTONS (Information, Download, Discord) -->
-<div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mb-16 px-4">
-    
-    <!-- Information Button -->
-    <a href="information.html" class="l2-3d-button py-4 px-6 rounded flex items-center justify-center gap-3 text-center no-underline cursor-pointer">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-[#c89b3c]">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08s5.97 1.09 6 3.08c-1.29 1.94-3.5 3.22-6 3.22z"/>
-        </svg>
-        <span class="font-sc tracking-[2px] font-bold text-base">Information</span>
-    </a>
-
-    <!-- Download Button -->
-    <a href="download.html" class="l2-3d-button py-4 px-6 rounded flex items-center justify-center gap-3 text-center no-underline cursor-pointer">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#c89b3c]">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-        </svg>
-        <span class="font-sc tracking-[2px] font-bold text-base">Download Client</span>
-    </a>
-
-    <!-- Discord Button -->
-    <a href="https://discord.gg/Q9NXk3Z37P" target="_blank" class="l2-3d-button py-4 px-6 rounded flex items-center justify-center gap-3 text-center no-underline cursor-pointer">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-indigo-400">
-            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 11.721 11.721 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.078.078 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
-        </svg>
-        <span class="font-sc tracking-[2px] font-bold text-base">Discord Community</span>
-    </a>
-</div>
-
-<!-- L2 PRO FEATURES -->
-<div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl px-4">
-    
-    <div class="bg-black/50 border border-[#c89b3c]/20 p-6 rounded hover:border-[#c89b3c]/80 transition-colors duration-300 backdrop-blur-sm flex flex-col items-center text-center">
-        <svg class="w-12 h-12 text-[#c89b3c] mb-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-        </svg>
-        <h3 class="font-sc text-white tracking-widest text-lg mb-2">Anti-Bot System</h3>
-        <p class="text-white/50 text-sm">Advanced active protection. Fair economy and 100% cheat-free gameplay.</p>
-    </div>
-
-    <div class="bg-black/50 border border-[#c89b3c]/20 p-6 rounded hover:border-[#c89b3c]/80 transition-colors duration-300 backdrop-blur-sm flex flex-col items-center text-center">
-        <svg class="w-12 h-12 text-[#c89b3c] mb-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M11.412 15.655L9.75 21.75l3.745-4.012M9.257 13.5H3.75l2.659-2.849m2.048-2.194L14.25 2.25 12 10.5h8.25l-4.707 5.043M8.457 8.457L3 3m5.457 5.457l7.086 7.086m0 0L21 21" />
-        </svg>
-        <h3 class="font-sc text-white tracking-widest text-lg mb-2">Dynamic PvP</h3>
-        <p class="text-white/50 text-sm">Daily automated events, brutal castle sieges, and highly contested farming zones.</p>
-    </div>
-
-    <div class="bg-black/50 border border-[#c89b3c]/20 p-6 rounded hover:border-[#c89b3c]/80 transition-colors duration-300 backdrop-blur-sm flex flex-col items-center text-center">
-        <svg class="w-12 h-12 text-[#c89b3c] mb-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-        </svg>
-        <h3 class="font-sc text-white tracking-widest text-lg mb-2">Community</h3>
-        <p class="text-white/50 text-sm">Professional staff with no in-game interference. Join a clan and conquer the world of La2-Nox.</p>
-    </div>
-
-</div>
-</div>
-
-<footer class="mt-auto pt-10 pb-8 text-center font-sc uppercase w-full">
-    <div class="text-[11px] tracking-[12px] text-white/40 mb-3">
-        Lineage II La2-Nox Project • Prepare for Glory
-    </div>
-    <div class="text-[9px] tracking-[3px] text-white/20 flex justify-center items-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-[--l2-gold-dark] opacity-50 animate-pulse"></span>
-        Visits: <span id="visit-count">1,248</span>
-    </div>
-</footer>
-
-<!-- REGISTER MODAL (Mobius Style) -->
-<div id="register-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
-    <!-- Blurred Dark Background -->
-    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="modal-overlay"></div>
-    
-    <!-- Main Modal Box -->
-    <div class="relative w-full max-w-md bg-gradient-to-b from-[#161218] to-[#0a080c] border border-[#c89b3c]/30 rounded-xl shadow-[0_0_40px_rgba(0,0,0,0.9)] p-1.5 transform scale-95 transition-transform duration-300" id="modal-box">
-        
-        <!-- Inner Border -->
-        <div class="border border-[#c89b3c]/10 rounded-lg p-7 relative">
-            
-            <!-- Close Button -->
-            <button id="btn-close-register" class="absolute top-4 right-4 w-6 h-6 flex items-center justify-center rounded-full border border-white/20 text-white/50 hover:text-white hover:border-white/80 hover:bg-white/10 transition-colors">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-
-            <h3 class="font-sc text-xl text-center text-[#f3e5ab] font-bold tracking-[0.1em] mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                CREATE ACCOUNT
-            </h3>
-
-            <div id="register-content">
-                <!-- WEB REGISTRATION FORM -->
-                <form id="form-web-register" class="space-y-4">
-                    <div>
-                        <input type="text" id="reg-account" placeholder="Account Name (4-14 chars)" required class="w-full bg-[#050406] border border-white/10 rounded-md px-4 py-3 text-sm text-white focus:outline-none focus:border-[#c89b3c]/60 focus:bg-[#0a080c] transition-colors placeholder:text-white/30 shadow-inner">
-                    </div>
-                    <div>
-                        <input type="email" id="reg-email" placeholder="Email" required class="w-full bg-[#050406] border border-white/10 rounded-md px-4 py-3 text-sm text-white focus:outline-none focus:border-[#c89b3c]/60 focus:bg-[#0a080c] transition-colors placeholder:text-white/30 shadow-inner">
-                    </div>
-                    <div>
-                        <input type="password" id="reg-password" placeholder="Password (4-16 chars)" required class="w-full bg-[#050406] border border-white/10 rounded-md px-4 py-3 text-sm text-white focus:outline-none focus:border-[#c89b3c]/60 focus:bg-[#0a080c] transition-colors placeholder:text-white/30 shadow-inner">
-                    </div>
-                    <div>
-                        <input type="password" id="reg-confirm" placeholder="Confirm Password" required class="w-full bg-[#050406] border border-white/10 rounded-md px-4 py-3 text-sm text-white focus:outline-none focus:border-[#c89b3c]/60 focus:bg-[#0a080c] transition-colors placeholder:text-white/30 shadow-inner">
-                    </div>
-
-                    <button type="submit" id="btn-submit-reg" class="w-full mt-4 bg-gradient-to-b from-[#ffe58f] via-[#c89b3c] to-[#755b23] text-black font-sc font-bold tracking-[0.15em] py-3.5 rounded-md shadow-[0_0_15px_rgba(200,155,60,0.3)] hover:shadow-[0_0_25px_rgba(200,155,60,0.6)] transform hover:-translate-y-0.5 transition-all duration-200">
-                        REGISTER
-                    </button>
-
-                    <div id="reg-message" class="hidden text-center text-sm font-bold mt-2"></div>
-                </form>
-
-                <!-- AUTO-CREATE NOTICE -->
-                <div id="msg-auto-create" class="hidden text-center py-6">
-                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#c89b3c]/10 border border-[#c89b3c]/30 mb-4">
-                        <svg class="w-8 h-8 text-[#c89b3c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
-                    <p class="text-white/80 text-sm leading-relaxed mb-3">
-                        Web account creation is temporarily disabled because the server is using the <span class="text-white font-bold">Auto-Create</span> system.
-                    </p>
-                    <p class="text-[#f3e5ab] text-sm font-bold tracking-wide">
-                        Simply log into the game using your desired account name and password to create your account instantly!
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-	<!-- SCRIPT DE LA VENTANA MODAL Y AUTO-CREATE -->
-    <script>
-        // ==========================================
-        // CONFIGURACIÓN DE CREACIÓN DE CUENTAS
-        // Cambia a 'true' si el server está en Auto-Create
-        // Cambia a 'false' si quieres usar el formulario web
-        // ==========================================
-        const USA_AUTO_CREATE = false; 
-
-        // Referencias a los elementos
-        const modalReg = document.getElementById('register-modal');
-        const modalBox = document.getElementById('modal-box');
-        const btnOpenReg = document.getElementById('btn-open-register');
-        const btnCloseReg = document.getElementById('btn-close-register');
-        const overlayReg = document.getElementById('modal-overlay');
-
-        const formWeb = document.getElementById('form-web-register');
-        const msgAuto = document.getElementById('msg-auto-create');
-
-        // Función para abrir la ventana
-        function openModal() {
-            // Mostrar modal
-            modalReg.classList.remove('hidden');
-            // Pequeño delay para la animación de entrada suave
-            setTimeout(() => {
-                modalReg.classList.remove('opacity-0');
-                modalBox.classList.remove('scale-95');
-                modalBox.classList.add('scale-100');
-            }, 10);
-
-            // Control de vista: ¿Formulario o Mensaje?
-            if (USA_AUTO_CREATE) {
-                formWeb.classList.add('hidden');
-                msgAuto.classList.remove('hidden');
-            } else {
-                formWeb.classList.remove('hidden');
-                msgAuto.classList.add('hidden');
-            }
-        }
-
-        // Función para cerrar la ventana
-        function closeModal() {
-            modalReg.classList.add('opacity-0');
-            modalBox.classList.remove('scale-100');
-            modalBox.classList.add('scale-95');
-            // Esperar a que termine la animación para ocultar el div
-            setTimeout(() => {
-                modalReg.classList.add('hidden');
-            }, 300);
-        }
-
-        // Asignar los eventos a los botones
-        btnOpenReg.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal();
-        });
-        
-        btnCloseReg.addEventListener('click', closeModal);
-        overlayReg.addEventListener('click', closeModal);
-
-        // Conexión con status.php para registrar la cuenta
-        formWeb.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Evita que la página se recargue
-
-            const btnSubmit = document.getElementById('btn-submit-reg');
-            const msgBox = document.getElementById('reg-message');
-            
-            // Textos de los campos
-            const account = document.getElementById('reg-account').value;
-            const email = document.getElementById('reg-email').value;
-            const password = document.getElementById('reg-password').value;
-            const confirm = document.getElementById('reg-confirm').value;
-
-            // Validación rápida
-            if (password !== confirm) {
-                msgBox.innerHTML = "Las contraseñas no coinciden.";
-                msgBox.className = "text-center text-sm font-bold mt-2 text-red-500";
-                return;
-            }
-
-            // Cambiar botón a modo 'cargando'
-            const originalText = btnSubmit.innerHTML;
-            btnSubmit.innerHTML = 'CREANDO CUENTA...';
-            btnSubmit.disabled = true;
-            msgBox.innerHTML = '';
-
-            // Armar los datos a enviar
-            const formData = new FormData();
-            formData.append('action', 'register'); // ESTA ES LA CLAVE
-            formData.append('account', account);
-            formData.append('email', email);
-            formData.append('password', password);
-
-            try {
-                const response = await fetch('status.php', {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                const result = await response.json();
-
-                if (result.success) {
-                    msgBox.innerHTML = "¡Cuenta creada exitosamente! Ya puedes loguearte.";
-                    msgBox.className = "text-center text-sm font-bold mt-2 text-green-400";
-                    formWeb.reset(); // Limpia el formulario
-                    setTimeout(closeModal, 3000); // Cierra la ventana a los 3 segundos
-                } else {
-                    msgBox.innerHTML = result.message; // Mensaje de error (ej: cuenta ya existe)
-                    msgBox.className = "text-center text-sm font-bold mt-2 text-red-500";
-                }
-            } catch (error) {
-                msgBox.innerHTML = "Error al conectar con el servidor.";
-                msgBox.className = "text-center text-sm font-bold mt-2 text-red-500";
-            }
-
-            // Restaurar botón
-            btnSubmit.innerHTML = originalText;
-            btnSubmit.disabled = false;
-        });
-    </script>
-
-    <script src="js/script.js"></script>
-</body>
-</html>
+Use Control + Shift + mpara alternar o tabfoco da tecla. Como alternativa, use escpara tabmover para o próximo elemento interativo na página.
+ 
