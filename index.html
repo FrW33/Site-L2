@@ -395,78 +395,363 @@
             setTimeout(() => {
                 modalReg.classList.add('hidden');
             }, 300);
+        }<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lineage 2 L2Antharas - Hi5 200x</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://tailwindcss.com"></script>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        /* Estilos 3D personalizados estilo Lineage 2 UI */
+        .l2-3d-button {
+            position: relative;
+            background: linear-gradient(to bottom, #2a2620 0%, #151310 50%, #0d0c0a 100%);
+            border: 2px solid #8c6d2c;
+            border-top-color: #e5b854;
+            border-left-color: #d4a745;
+            border-bottom-color: #4a3814;
+            border-right-color: #5c471a;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25),
+                        inset 0 -2px 4px rgba(0, 0, 0, 0.9),
+                        0 6px 12px rgba(0, 0, 0, 0.7),
+                        0 2px 4px rgba(0, 0, 0, 0.5);
+            color: #f3e5ab;
+            font-family: 'Marcellus SC', serif;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+            transition: all 0.15s ease-in-out;
+            transform: translateY(0);
+        }
+        .l2-3d-button:hover {
+            background: linear-gradient(to bottom, #383129 0%, #1f1b16 50%, #14120f 100%);
+            border-color: #f1c45d;
+            border-top-color: #ffe58f;
+            border-left-color: #f7d06d;
+            border-bottom-color: #614a1b;
+            border-right-color: #755b23;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                        inset 0 -2px 4px rgba(0, 0, 0, 0.8),
+                        0 8px 16px rgba(0, 0, 0, 0.8),
+                        0 0 15px rgba(200, 155, 60, 0.4);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        .l2-3d-button:active {
+            transform: translateY(1px);
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.9),
+                        0 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        .nav-3d-btn {
+            background: linear-gradient(to bottom, rgba(30, 27, 22, 0.85), rgba(10, 9, 8, 0.95));
+            border: 1px solid rgba(200, 155, 60, 0.35);
+            border-top-color: rgba(229, 184, 84, 0.6);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 3px 6px rgba(0,0,0,0.6);
+            padding: 6px 14px;
+            border-radius: 2px;
+            transition: all 0.2s ease;
+        }
+        .nav-3d-btn:hover {
+            background: linear-gradient(to bottom, rgba(50, 43, 33, 0.95), rgba(20, 18, 15, 0.98));
+            border-color: rgba(241, 196, 93, 0.9);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 4px 10px rgba(0,0,0,0.8), 0 0 12px rgba(200, 155, 60, 0.4);
+            color: #f3e5ab;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body class="pt-16 px-4 pb-4 flex flex-col items-center min-h-screen">
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-black/85 backdrop-blur-md border-b border-white/10 shadow-lg md:h-16">
+        <div class="max-w-[1500px] w-full h-full mx-auto px-4 py-3 md:py-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 font-sc tracking-[0.1em] text-xs text-white/90">
+
+            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+                <a href="index.html" class="flex items-center gap-2 no-underline group shrink-0">
+                    <div class="h-8 px-2 rounded-lg bg-gradient-to-b from-[#ffe58f] via-[#c89b3c] to-[#755b23] flex flex-col items-center justify-center font-black text-black shadow-[0_0_12px_rgba(200,155,60,0.6)] border border-[#ffe58f]/60 transform -rotate-6 group-hover:scale-105 group-hover:rotate-0 transition-all duration-300 leading-none">
+                        <span class="text-[9px] lowercase opacity-80 tracking-widest -mb-0.5">l2</span>
+                        <span class="text-[13px] uppercase">antharas</span>
+                    </div>
+                    <div class="hidden sm:flex items-center gap-1 font-bold tracking-wider text-sm uppercase">
+                        <span class="text-white group-hover:text-[#f3e5ab] transition-colors">SERVER</span>
+                        <span class="text-[#c89b3c]">HIGHFIVE</span>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-2 md:gap-4 uppercase shrink-0">
+                    <a href="index.html" class="nav-3d-btn">Home</a>
+                    <a href="informacion.html" class="nav-3d-btn">Informações</a>
+                    <a href="download.html" class="nav-3d-btn">Download</a>
+                    <button id="btn-open-register" class="nav-3d-btn text-[#f3e5ab] font-bold border-[#c89b3c] bg-[#c89b3c]/10 cursor-pointer hover:scale-105 transition-transform">
+                        Criar Conta
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-2 md:gap-3 uppercase shrink-0">
+                <div class="flex items-center space-x-2 bg-black/60 px-2 py-1.5 rounded-sm border border-white/10">
+                    <span class="text-white/50 hidden xl:inline">Server:</span>
+                    <span id="server-dot" class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+                    <span id="server-text" class="text-green-400 font-bold">Online</span>
+                </div>
+
+                <div class="flex items-center space-x-1.5 bg-black/60 px-2 py-1.5 rounded-sm border border-white/10">
+                    <span class="text-white/50 hidden xl:inline">Olimpíadas:</span>
+                    <span id="oly-time" class="text-[#c89b3c] font-bold">Carregando...</span>
+                </div>
+
+                <div class="flex items-center space-x-1.5 bg-black/60 px-2 py-1.5 rounded-sm border border-white/10">
+                    <span class="text-white/50 hidden xl:inline">7 Signs:</span>
+                    <span id="ssq-time" class="text-[#c89b3c] font-bold">Carregando...</span>
+                </div>
+
+                <a href="https://discord.gg" target="_blank" class="nav-3d-btn text-indigo-200 border-indigo-500/40">
+                    Discord
+                </a>
+
+                <div class="relative ml-10">
+                    <button type="button" onclick="document.getElementById('lang-menu').classList.toggle('hidden'); event.stopPropagation();" class="flex items-center gap-1.5 bg-black/60 px-2.5 py-1.5 rounded-sm border border-white/10 text-white/80 hover:text-white hover:border-[#c89b3c]/50 transition-colors cursor-pointer uppercase text-xs font-bold">
+                        <svg class="w-3.5 h-3.5 text-[#c89b3c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        PT
+                        <svg class="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="lang-menu" class="absolute right-0 top-full mt-1 w-28 bg-[#0a080c]/95 backdrop-blur-md border border-[#c89b3c]/30 rounded-md shadow-[0_5px_15px_rgba(0,0,0,0.8)] hidden z-50 flex flex-col overflow-hidden">
+                        <a href="index.html" class="px-4 py-2.5 text-[11px] font-bold text-white/70 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2">
+                            <img src="https://flagcdn.com" alt="PT" class="w-4 h-auto rounded-sm"> Português
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- CONTEÚDO PRINCIPAL DO MEIO -->
+    <div class="w-full flex flex-col items-center justify-center flex-grow pt-10">
+        <main class="w-full max-w-5xl text-center px-4 mb-8">
+            <div class="bg-black/40 backdrop-blur-md border border-[#c89b3c]/30 rounded-xl p-8 max-w-3xl mx-auto shadow-2xl">
+                <h1 class="text-white font-black text-3xl md:text-5xl uppercase tracking-widest mb-4" style="font-family: 'Cinzel Decorative', serif;">
+                    BEM-VINDOS AO L2 ANTHARAS
+                </h1>
+                <p class="text-white/70 text-sm md:text-base leading-relaxed mb-6" style="font-family: 'Marcellus', serif;">
+                    Prepare-se para a melhor experiência High Five PvP. Junte-se a uma comunidade ativa, participe de cercos épicos a castelos e mostre seu valor nos campos de batalha. Você tem o necessário para ganhar as terras de Aden?
+                </p>
+                
+                <div class="grid grid-cols-3 gap-4 border-t border-white/10 pt-6 max-w-md mx-auto" style="font-family: 'Marcellus SC', serif;">
+                    <div class="flex flex-col items-center">
+                        <span class="text-white/40 text-[10px] mb-2">Crônica</span>
+                        <span class="text-[#f3e5ab] font-bold text-lg">Hi5</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-white/40 text-[10px] mb-2">Rates</span>
+                        <span class="text-[#f3e5ab] font-bold text-lg">Exp x200</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-white/40 text-[10px] mb-2">Plataforma</span>
+                        <span class="text-[#f3e5ab] font-bold text-lg">L2 Official</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- BOTÕES DE AÇÃO EM 3D -->
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mb-16 px-4">
+            <a href="informacion.html" class="l2-3d-button py-4 px-6 rounded flex items-center justify-center gap-3 text-center no-underline cursor-pointer">
+                <span class="font-sc tracking-[2px] font-bold text-base">Informações</span>
+            </a>
+
+            <a href="download.html" class="l2-3d-button py-4 px-6 rounded flex items-center justify-center gap-3 text-center no-underline cursor-pointer">
+                <span class="font-sc tracking-[2px] font-bold text-base">Downloads</span>
+            </a>
+
+            <a href="https://discord.gg" target="_blank" class="l2-3d-button py-4 px-6 rounded flex items-center justify-center gap-3 text-center no-underline cursor-pointer">
+                <span class="font-sc tracking-[2px] font-bold text-base">Discord Community</span>
+            </a>
+        </div>
+
+        <!-- RECURSOS DO SERVIDOR -->
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl px-4 mb-10">
+            <div class="bg-black/50 border border-[#c89b3c]/20 p-6 rounded hover:border-[#c89b3c]/80 transition-colors duration-300 backdrop-blur-sm flex flex-col items-center text-center">
+                <h3 class="font-sc text-white tracking-widest text-lg mb-2">Anti-Bot System</h3>
+                <p class="text-white/50 text-sm">Proteção ativa de última geração. Economia justa e gameplay 100% livre de trapaças.</p>
+            </div>
+
+            <div class="bg-black/50 border border-[#c89b3c]/20 p-6 rounded hover:border-[#c89b3c]/80 transition-colors duration-300 backdrop-blur-sm flex flex-col items-center text-center">
+                <h3 class="font-sc text-white tracking-widest text-lg mb-2">PvP Dinâmico</h3>
+                <p class="text-white/50 text-sm">Eventos diários automáticos, cercos brutais e zonas de farm altamente disputadas.</p>
+            </div>
+
+            <div class="bg-black/50 border border-[#c89b3c]/20 p-6 rounded hover:border-[#c89b3c]/80 transition-colors duration-300 backdrop-blur-sm flex flex-col items-center text-center">
+                <h3 class="font-sc text-white tracking-widest text-lg mb-2">Comunidade</h3>
+                <p class="text-white/50 text-sm">Staff dedicada e profissional. Junte-se a um clã e domine o mundo do L2Antharas.</p>
+            </div>
+        </div>
+    </div>
+    <!-- RODAPÉ DO SITE -->
+    <footer class="mt-auto pt-10 pb-8 text-center font-sc uppercase w-full">
+        <div class="text-[11px] tracking-[12px] text-white/40 mb-3">
+            Lineage II L2Antharas Project • Prepare-se para a Glória
+        </div>
+        <div class="text-[9px] tracking-[3px] text-white/20 flex justify-center items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 opacity-50 animate-pulse"></span>
+            Visitas: <span id="visit-count">1,248</span>
+        </div>
+    </footer>
+    
+    <!-- JANELA DE CADASTRO (MODAL) -->
+    <div id="register-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="modal-overlay"></div>
+        <div class="relative w-full max-w-md bg-gradient-to-b from-[#161218] to-[#0a080c] border border-[#c89b3c]/30 rounded-xl shadow-[0_0_40px_rgba(0,0,0,0.9)] p-1.5 transform scale-95 transition-transform duration-300" id="modal-box">
+            <div class="border border-[#c89b3c]/10 rounded-lg p-7 relative">
+                
+                <button id="btn-close-register" class="absolute top-4 right-4 w-6 h-6 flex items-center justify-center rounded-full border border-white/20 text-white/50 hover:text-white hover:border-white/80 hover:bg-white/10 transition-colors">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+
+                <h3 class="font-sc text-xl text-center text-[#f3e5ab] font-bold tracking-[0.1em] mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    CRIAR CONTA
+                </h3>
+
+                <div id="register-content">
+                    <!-- FORMULÁRIO DE CADASTRO VIA WEB -->
+                    <form id="form-web-register" class="space-y-4">
+                        <div>
+                            <input type="text" id="reg-account" placeholder="Login da conta (4-14 caracteres)" required class="w-full bg-[#050406] border border-white/10 rounded-md px-4 py-3 text-sm text-white focus:outline-none focus:border-[#c89b3c]/60 focus:bg-[#0a080c] transition-colors placeholder:text-white/30 shadow-inner">
+                        </div>
+                        <div>
+                            <input type="email" id="reg-email" placeholder="E-mail" required class="w-full bg-[#050406] border border-white/10 rounded-md px-4 py-3 text-sm text-white focus:outline-none focus:border-[#c89b3c]/60 focus:bg-[#0a080c] transition-colors placeholder:text-white/30 shadow-inner">
+                        </div>
+                        <div>
+                            <input type="password" id="reg-password" placeholder="Senha (4-16 caracteres)" required class="w-full bg-[#050406] border border-white/10 rounded-md px-4 py-3 text-sm text-white focus:outline-none focus:border-[#c89b3c]/60 focus:bg-[#0a080c] transition-colors placeholder:text-white/30 shadow-inner">
+                        </div>
+                        <div>
+                            <input type="password" id="reg-confirm" placeholder="Confirme sua senha" required class="w-full bg-[#050406] border border-white/10 rounded-md px-4 py-3 text-sm text-white focus:outline-none focus:border-[#c89b3c]/60 focus:bg-[#0a080c] transition-colors placeholder:text-white/30 shadow-inner">
+                        </div>
+                        
+                        <button type="submit" id="btn-submit-reg" class="w-full mt-4 bg-gradient-to-b from-[#ffe58f] via-[#c89b3c] to-[#755b23] text-black font-sc font-bold tracking-[0.15em] py-3.5 rounded-md shadow-[0_0_15px_rgba(200,155,60,0.3)] hover:shadow-[0_0_25px_rgba(200,155,60,0.6)] transform hover:-translate-y-0.5 transition-all duration-200">
+                            CADASTRAR
+                        </button>
+                        <div id="reg-message" class="hidden text-center text-sm font-bold mt-2"></div>
+                    </form>
+
+                    <!-- AVISO CASO SEU SERVIDOR USE AUTO-CREATE NO JOGO -->
+                    <div id="msg-auto-create" class="hidden text-center py-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#c89b3c]/10 border border-[#c89b3c]/30 mb-4">
+                            <svg class="w-8 h-8 text-[#c89b3c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <p class="text-white/80 text-sm leading-relaxed mb-3">
+                            A criação de contas via site está desativada temporariamente porque o servidor está usando o sistema <span class="text-white font-bold">Auto-Create</span>.
+                        </p>
+                        <p class="text-[#f3e5ab] text-sm font-bold tracking-wide">
+                            Basta colocar o Login e Senha que desejar direto na tela de login do jogo para criar sua conta instantaneamente!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE FUNCIONAMENTO -->
+    <script>
+        // ATENÇÃO: Deixe em 'false' para usar o formulário do site.
+        // Mude para 'true' se seu servidor aceitar contas direto pelo jogo.
+        const USA_AUTO_CREATE = false; 
+
+        const modalReg = document.getElementById('register-modal');
+        const modalBox = document.getElementById('modal-box');
+        const btnOpenReg = document.getElementById('btn-open-register');
+        const btnCloseReg = document.getElementById('btn-close-register');
+        const overlayReg = document.getElementById('modal-overlay');
+        const formWeb = document.getElementById('form-web-register');
+        const msgAuto = document.getElementById('msg-auto-create');
+
+        function openModal() {
+            modalReg.classList.remove('hidden');
+            setTimeout(() => {
+                modalReg.classList.remove('opacity-0');
+                if(modalBox) {
+                    modalBox.classList.remove('scale-95');
+                    modalBox.classList.add('scale-100');
+                }
+            }, 10);
+
+            if (USA_AUTO_CREATE) {
+                if(formWeb) formWeb.classList.add('hidden');
+                if(msgAuto) msgAuto.classList.remove('hidden');
+            } else {
+                if(formWeb) formWeb.classList.remove('hidden');
+                if(msgAuto) msgAuto.classList.add('hidden');
+            }
         }
 
-        // Asignar los eventos a los botones
-        btnOpenReg.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal();
-        });
+        function closeModal() {
+            modalReg.classList.add('opacity-0');
+            if(modalBox) {
+                modalBox.classList.remove('scale-100');
+                modalBox.classList.add('scale-95');
+            }
+            setTimeout(() => {
+                modalReg.classList.add('hidden');
+            }, 300);
+        }
+
+        if(btnOpenReg) {
+            btnOpenReg.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            });
+        }
         
-        btnCloseReg.addEventListener('click', closeModal);
-        overlayReg.addEventListener('click', closeModal);
+        if(btnCloseReg) btnCloseReg.addEventListener('click', closeModal);
+        if(overlayReg) overlayReg.addEventListener('click', closeModal);
 
-        // Conexión con status.php para registrar la cuenta
-        formWeb.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Evita que la página se recargue
-
-            const btnSubmit = document.getElementById('btn-submit-reg');
-            const msgBox = document.getElementById('reg-message');
-            
-            // Textos de los campos
-            const account = document.getElementById('reg-account').value;
-            const email = document.getElementById('reg-email').value;
-            const password = document.getElementById('reg-password').value;
-            const confirm = document.getElementById('reg-confirm').value;
-
-            // Validación rápida
-            if (password !== confirm) {
-                msgBox.innerHTML = "Las contraseñas no coinciden.";
-                msgBox.className = "text-center text-sm font-bold mt-2 text-red-500";
-                return;
-            }
-
-            // Cambiar botón a modo 'cargando'
-            const originalText = btnSubmit.innerHTML;
-            btnSubmit.innerHTML = 'CREANDO CUENTA...';
-            btnSubmit.disabled = true;
-            msgBox.innerHTML = '';
-
-            // Armar los datos a enviar
-            const formData = new FormData();
-            formData.append('action', 'register'); // ESTA ES LA CLAVE
-            formData.append('account', account);
-            formData.append('email', email);
-            formData.append('password', password);
-
-            try {
-                const response = await fetch('status.php', {
-                    method: 'POST',
-                    body: formData
-                });
+        if(formWeb) {
+            formWeb.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btnSubmit = document.getElementById('btn-submit-reg');
+                const msgBox = document.getElementById('reg-message');
                 
-                const result = await response.json();
+                const account = document.getElementById('reg-account').value;
+                const email = document.getElementById('reg-email').value;
+                const password = document.getElementById('reg-password').value;
+                const confirm = document.getElementById('reg-confirm').value;
 
-                if (result.success) {
-                    msgBox.innerHTML = "¡Cuenta creada exitosamente! Ya puedes loguearte.";
-                    msgBox.className = "text-center text-sm font-bold mt-2 text-green-400";
-                    formWeb.reset(); // Limpia el formulario
-                    setTimeout(closeModal, 3000); // Cierra la ventana a los 3 segundos
-                } else {
-                    msgBox.innerHTML = result.message; // Mensaje de error (ej: cuenta ya existe)
+                if (password !== confirm) {
+                    msgBox.innerHTML = "As senhas não coincidem.";
                     msgBox.className = "text-center text-sm font-bold mt-2 text-red-500";
+                    msgBox.classList.remove('hidden');
+                    return;
                 }
-            } catch (error) {
-                msgBox.innerHTML = "Error al conectar con el servidor.";
-                msgBox.className = "text-center text-sm font-bold mt-2 text-red-500";
-            }
 
-            // Restaurar botón
-            btnSubmit.innerHTML = originalText;
-            btnSubmit.disabled = false;
-        });
-    </script>
+                const originalText = btnSubmit.innerHTML;
+                btnSubmit.innerHTML = 'CRIANDO CONTA...';
+                btnSubmit.disabled = true;
+                msgBox.innerHTML = '';
 
-    <script src="js/script.js"></script>
-</body>
-</html>
+                const formData = new FormData();
+                formData.append('action', 'register');
+                formData.append('account', account);
+                formData.append('email', email);
+                formData.append('password', password);
+
+                try {
+                    const response = await fetch('status.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const result = await response.json();
+
+                    if (result.success) {
+                        msgBox.innerHTML = "Conta criada com sucesso! Bom jogo.";
+                        msgBox.className = "text-center text-sm font-bold mt-2 text-green-400";
+                        msgBox.classList.remove('hidden');
+                        formWeb.reset();
+                        setTimeout(closeModal, 3000);
+                    } else {
+                        msgBox.innerHTML = result.message;
+                        msgBox.className = "text-center text-sm font-bold mt-2 text-red-500";
+                        msgBox.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    msgBox.innerHTML = "Erro ao conectar com o banco de dados.";
+                    msgBox.className = "text-center text-sm font-bold mt-2 text-red-500";
+                    msgBox.classList.remove('hidden');
+                }
