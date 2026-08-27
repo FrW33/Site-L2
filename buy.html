@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy Coins - L2Ironside 200x</title>
     <style>
-        /* Estilos Tradicionais Fixos - Sem dependências externas */
+        /* Correção Geral de Alinhamento Centralizado */
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
             background-color: #050406;
             color: #f3e5ab;
@@ -15,12 +16,16 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            
+            /* Força tudo a ficar vertical e 100% no centro da tela */
             display: flex;
-            flex-col: column;
+            flex-direction: column;
             align-items: center;
-            min-height: screen;
+            justify-content: flex-start;
+            min-height: 100vh;
             padding-top: 100px;
         }
+
         /* Topo do site */
         .l2-nav {
             position: fixed;
@@ -63,28 +68,13 @@
             transition: transform 0.2s;
         }
         .btn-criar-conta:hover { transform: scale(1.05); }
-    </style>
-</head>
-<body>
 
-    <!-- BARRA SUPERIOR -->
-    <nav class="l2-nav">
-        <a href="index.html" class="logo-nav">🛡️ L2 IRONSIDE</a>
-        <div class="menu-links">
-            <a href="index.html">HOME</a>
-            <a href="index_pt.html">INFO</a>
-            <a href="index_en.html">DOWNLOAD</a>
-            <a href="buy.html" class="active">BUY COINS</a>
-            <a href="https://discord.gg" target="_blank">SUPORTE</a>
-        </div>
-        <button class="btn-criar-conta" onclick="window.location.href='index.html'">CRIAR CONTA</button>
-    </nav>
-    <style>
-        /* Estilos do Corpo Central */
+        /* Estrutura Central da Loja */
         .loja-container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             width: 100%;
             max-width: 900px;
             text-align: center;
@@ -96,7 +86,7 @@
             letter-spacing: 6px;
             font-weight: bold;
             font-size: 10px;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         .loja-titulo {
             color: white;
@@ -110,10 +100,11 @@
             color: rgba(255, 255, 255, 0.5);
             font-size: 13px;
             max-width: 500px;
-            line-content: 1.6;
+            line-height: 1.6;
             margin-bottom: 40px;
         }
-        /* Card Central */
+
+        /* Card Centralizado */
         .l2-card {
             background: linear-gradient(to bottom, #0f0d12 0%, #070608 100%);
             border: 1px solid rgba(140, 109, 44, 0.25);
@@ -123,7 +114,7 @@
             border-radius: 4px;
             padding: 30px;
             position: relative;
-            margin-bottom: 40px;
+            margin: 0 auto 40px auto; /* Força o alinhamento no meio exato */
         }
         .moeda-icone {
             width: 48px;
@@ -172,6 +163,7 @@
             display: block;
             margin-top: 4px;
         }
+
         /* Slider Customizado */
         .slider-wrapper { margin-bottom: 24px; }
         input[type="range"] {
@@ -201,7 +193,8 @@
             font-weight: bold;
             margin-top: 6px;
         }
-        /* Linhas da Tabela */
+
+        /* Tabela de valores */
         .tabela-valores {
             border-top: 1px solid rgba(255,255,255,0.05);
             padding-top: 16px;
@@ -214,7 +207,7 @@
         }
         .tab-linha { display: flex; justify-content: space-between; color: rgba(255,255,255,0.5); }
         .tab-linha span:last-child { color: white; }
-        .tab-linha .bonus-verde { color: #34d399 !important; }
+        .bonus-verde { color: #34d399 !important; }
         .total-linha {
             border-top: 1px solid rgba(255,255,255,0.05);
             padding-top: 14px;
@@ -238,8 +231,43 @@
             transition: transform 0.2s;
         }
         .btn-pix:hover { transform: scale(1.02); }
-    </style>
 
+        /* Rodapé Fixo */
+        .l2-footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            margin-top: auto; /* Garante que o rodapé fique sempre embaixo */
+        }
+        .visitas-linha {
+            font-size: 9px;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.15);
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR -->
+    <nav class="l2-nav">
+        <a href="index.html" class="logo-nav">🛡️ L2 IRONSIDE</a>
+        <div class="menu-links">
+            <a href="index.html">HOME</a>
+            <a href="index_pt.html">INFO</a>
+            <a href="index_en.html">DOWNLOAD</a>
+            <a href="buy.html" class="active">BUY COINS</a>
+            <a href="https://discord.gg" target="_blank">SUPORTE</a>
+        </div>
+        <button class="btn-criar-conta" onclick="window.location.href='index.html'">CRIAR CONTA</button>
+    </nav>
+    <!-- CONTAINER CENTRALIZADOR DA LOJA -->
     <div class="loja-container">
         <span class="loja-subtitulo">LOJA OFICIAL</span>
         <h1 class="loja-titulo">BUY COINS</h1>
@@ -285,28 +313,8 @@
             <button class="btn-pix">Avançar para o Pix</button>
         </div>
     </div>
-    <!-- RODAPÉ DO SITE -->
-    <style>
-        .l2-footer {
-            width: 100%;
-            text-align: center;
-            padding: 30px 0;
-            background-color: rgba(0, 0, 0, 0.4);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 11px;
-            letter-spacing: 4px;
-            color: rgba(255, 255, 255, 0.3);
-            text-transform: uppercase;
-            margin-top: auto;
-        }
-        .visitas-linha {
-            font-size: 9px;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.15);
-            margin-top: 6px;
-        }
-    </style>
 
+    <!-- RODAPÉ UNIFICADO -->
     <footer class="l2-footer">
         <div>Lineage II L2Ironside Project • Prepare-se para a Glória</div>
         <div class="visitas-linha">Visitas: 1.248</div>
@@ -333,7 +341,7 @@
 
             const valorTotal = (quantidade * VALOR_POR_COIN).toFixed(2);
 
-            displayCoins.innerText = quantidade;
+            displayCoins.innerText = quantity = quantidade;
             tableTickets.innerText = quantidade;
             
             if (bonus > 0) {
