@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Coins - L2Ironside 200x</title>
+    <script src="https://tailwindcss.com"></script>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        body {
+            background-color: #050406;
+            color: #f3e5ab;
+            font-family: 'Marcellus', serif;
+            background-image: linear-gradient(rgba(5, 4, 6, 0.9), rgba(5, 4, 6, 0.95)), url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .l2-card {
+            background: linear-gradient(to bottom, #0f0d12 0%, #070608 100%);
+            border: 1px solid rgba(140, 109, 44, 0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        }
+        /* Estilização da barra de arrastar (Slider) */
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #1a1620;
+            border-radius: 3px;
+            outline: none;
+            border: 1px solid rgba(229, 184, 84, 0.2);
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: linear-gradient(to bottom, #ffe58f, #c89b3c);
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(200, 155, 60, 0.8);
+            border: 1px solid #ffe58f;
+        }
+    </style>
+</head>
+<body class="pt-24 px-4 pb-12 flex flex-col items-center min-h-screen">
+
+    <!-- BARRA SUPERIOR IDÊNTICA -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#050406]/95 backdrop-blur-md border-b border-white/5 shadow-lg h-16">
+        <div class="max-w-[1500px] w-full h-full mx-auto px-6 flex items-center justify-between font-bold text-xs uppercase tracking-wider text-white/80">
+            
+            <div class="flex items-center gap-10">
+                <a href="index.html" class="flex items-center gap-2 no-underline text-[#ffe58f] font-black text-sm tracking-widest">
+                    <span>🛡️ L2 IRONNSIDE</span>
+                </a>
+                <div class="hidden lg:flex items-center gap-6 text-white/60">
+                    <a href="index.html" class="hover:text-white transition-colors">HOME</a>
+                    <a href="index_pt.html" class="hover:text-white transition-colors">INFO</a>
+                    <a href="index_en.html" class="hover:text-white transition-colors">DOWNLOAD</a>
+                    <a href="buy.html" class="text-[#ffe58f] transition-colors">BUY COINS</a>
+                    <a href="https://discord.gg" target="_blank" class="hover:text-white transition-colors">SUPORTE</a>
+                </div>
+            </div>
+
+            <button class="bg-gradient-to-r from-[#ffe58f] via-[#c89b3c] to-[#755b23] text-black font-sc font-black tracking-[0.1em] px-6 py-2 rounded-sm shadow-[0_0_15px_rgba(200,155,60,0.3)] hover:scale-105 transition-transform text-[11px]">
+                CRIAR CONTA
+            </button>
+        </div>
+    </nav>
+    <!-- SEÇÃO DA LOJA CENTRAL -->
+    <div class="w-full max-w-4xl flex flex-col items-center justify-center flex-grow pt-8 z-10 text-center">
+        
+        <span class="text-white/40 tracking-[6px] font-bold text-[10px] uppercase mb-1">LOJA OFICIAL</span>
+        <h1 class="text-white font-black text-4xl md:text-6xl uppercase tracking-wider mb-3" style="font-family: 'Cinzel Decorative', serif;">
+            BUY COINS
+        </h1>
+        <p class="text-white/50 text-xs md:text-sm max-w-xl mx-auto mb-12">
+            Compre seus <span class="text-[#ffe58f] font-bold">Tickets</span> e receba na hora — entrega automática no seu personagem.<br>
+            Sua compra mantém o servidor no ar.
+        </p>
+
+        <!-- CAIXA DE DOAÇÃO (ESTILO NOBILITY) -->
+        <div class="l2-card w-full max-w-md rounded p-6 md:p-10 relative mb-8">
+            <!-- Cantoneiras decorativas sutis estilo L2 -->
+            <div class="absolute top-3 left-3 w-4 h-4 border-t border-l border-white/10"></div>
+            <div class="absolute top-3 right-3 w-4 h-4 border-t border-r border-white/10"></div>
+            
+            <!-- Ícone Moeda de Ouro -->
+            <div class="flex justify-center mb-4">
+                <div class="w-12 h-12 bg-gradient-to-b from-amber-300 via-amber-500 to-amber-700 rounded-full flex items-center justify-center border border-amber-300/40 shadow-[0_0_20px_rgba(245,158,11,0.4)]">
+                    <span class="text-black font-black text-lg">🪙</span>
+                </div>
+            </div>
+
+            <h3 class="text-white font-black tracking-widest text-lg uppercase mb-1" style="font-family: 'Marcellus SC', serif;">
+                TICKET DONATE
+            </h3>
+            <span class="text-white/30 text-[9px] tracking-wider uppercase block mb-8">
+                ESCOLHA A QUANTIDADE &bull; +20% ACIMA DE 100
+            </span>
+
+            <!-- NÚMERO EXIBIDO GRANDE -->
+            <div class="bg-[#050406] border border-white/5 rounded py-4 mb-8 shadow-inner">
+                <span id="display-coins" class="text-white font-black text-4xl block leading-none">15</span>
+                <span class="text-white/30 text-[10px] tracking-widest uppercase block mt-1">TICKETS &bull; DIGITE OU ARRASTE</span>
+            </div>
+
+            <!-- SLIDER (BARRA DE ARRASTAR) -->
+            <div class="mb-8 px-2">
+                <input type="range" id="coin-slider" min="5" max="500" value="15" step="5" class="w-full cursor-pointer">
+                <div class="flex justify-between text-[10px] text-white/20 mt-2 font-bold">
+                    <span>5</span>
+                    <span>500</span>
+                </div>
+            </div>
+
+            <!-- TABELA DE VALORES EM REAIS -->
+            <div class="border-t border-white/5 pt-4 text-xs font-bold tracking-wide uppercase space-y-3.5">
+                <div class="flex justify-between text-white/50">
+                    <span>Tickets</span>
+                    <span id="table-tickets" class="text-white">15</span>
+                </div>
+                <div class="flex justify-between text-white/50">
+                    <span>Bônus</span>
+                    <span id="table-bonus" class="text-emerald-400">+0</span>
+                </div>
+                <div class="flex justify-between text-[#ffe58f] border-t border-white/5 pt-3.5 text-sm">
+                    <span>Total (R$)</span>
+                    <span class="text-white">R$ <span id="table-total" class="text-[#ffe58f] font-black text-base">15,00</span></span>
+                </div>
+            </div>
+
+            <!-- BOTÃO GERAR PIX -->
+            <button class="w-full mt-8 bg-gradient-to-b from-[#ffe58f] via-[#c89b3c] to-[#755b23] text-black font-sc font-black tracking-[0.15em] py-3.5 rounded shadow-lg hover:scale-[1.02] transition-transform text-xs uppercase">
+                Avançar para o Pix
+            </button>
+        </div>
+    </div>
+    <!-- RODAPÉ DO SITE -->
+    <footer class="mt-auto pt-10 pb-8 text-center uppercase w-full relative z-10 bg-black/40 backdrop-blur-sm border-t border-white/5">
+        <div class="text-[11px] tracking-[12px] text-white/40 mb-2">
+            Lineage II L2Ironside Project • Prepare-se para a Glória
+        </div>
+        <div class="text-[9px] tracking-[3px] text-white/20 flex justify-center items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-600 opacity-50 animate-pulse"></span>
+            Visitas: <span id="visit-count">1,248</span>
+        </div>
+    </footer>
+
+    <!-- SCRIPT INTELIGENTE DE CÁLCULO DE MOEDAS -->
+    <script>
+        // Referências dos elementos na tela
+        const slider = document.getElementById('coin-slider');
+        const displayCoins = document.getElementById('display-coins');
+        const tableTickets = document.getElementById('table-tickets');
+        const tableBonus = document.getElementById('table-bonus');
+        const tableTotal = document.getElementById('table-total');
+
+        // Configuração do valor: Exemplo: R$ 1,00 por cada Ticket
+        const VALOR_POR_COIN = 1.00;
+
+        function atualizarPainel() {
+            const quantidade = parseInt(slider.value);
+            let bonus = 0;
+
+            // Regra do Bônus: +20% se a compra for acima de 100 moedas
+            if (quantidade >= 100) {
+                bonus = Math.floor(quantidade * 0.20);
+            }
+
+            // Calcula o valor total em Reais (R$)
+            const valorTotal = (quantidade * VALOR_POR_COIN).toFixed(2);
+
+            // Atualiza os elementos visuais na tela na hora
+            displayCoins.innerText = quantidade;
+            tableTickets.innerText = quantidade;
+            
+            if (bonus > 0) {
+                tableBonus.innerText = `+${bonus}`;
+                tableBonus.className = "text-emerald-400 font-black";
+            } else {
+                tableBonus.innerText = "+0";
+                tableBonus.className = "text-white";
+            }
+            
+            // Formata o valor com a vírgula dos centavos
+            tableTotal.innerText = valorTotal.replace('.', ',');
+        }
+
+        // Fica ouvindo o movimento do mouse arrastando a barra
+        slider.addEventListener('input', atualizarPainel);
+        
+        // Roda uma vez no início para deixar o painel montado com valor 15
+        atualizarPainel();
+    </script>
+</body>
+</html>
